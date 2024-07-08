@@ -1,0 +1,261 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+$full-width:100%;
+
+.benefits-container {
+    max-width: none;
+    margin:0 rem(16);
+
+    @include breakpoint-sm{
+        margin:0 rem(20);
+    }
+    
+    @include breakpoint-md{
+        max-width:calc($full-width*0.98);
+        margin:0 auto;
+    }
+  
+    @include breakpoint-lg{
+        max-width:calc($full-width*0.94);
+    }
+
+    @include breakpoint-xl{
+        max-width:calc($full-width*0.90);
+    }
+
+    @include breakpoint-xxl{
+        max-width:calc($full-width*0.80);
+    }
+}
+
+.benefits{
+    background:$clr-tertiary;
+    @include border-radius-tlr(34px, 34px);
+    &__grid-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-row-gap: 8rem; 
+
+        @include breakpoint-md{
+            grid-template-columns: repeat(2,1fr);
+            grid-column-gap: 2rem;
+        }
+        @include breakpoint-xl{
+            grid-column-gap: 3rem;
+        }
+        @include breakpoint-xxl{
+            grid-column-gap: 4rem;
+        }
+    }
+
+    &__grid-item{
+        position: relative;
+
+        figure{
+            position: absolute;
+            top: 0;
+            top: -54px;
+            left: calc(50% - 32px);
+        }
+    }
+
+    &__card{
+        @include border-radius(34px);
+        background-color: $clr-white;
+        @include flex-center;
+        flex-direction: column;
+        text-align: center;
+        padding: em(48) em(16);
+        @include breakpoint-md{
+            padding: em(56) em(24);
+        }
+        @include breakpoint-lg{
+            padding: em(64) em(32);
+        }
+    }
+    &__card-title{
+        font-size: rem(60);
+        font-weight: 500;
+        line-height: 1.4;
+        font-family:$ff-secondary;
+        @include breakpoint-lg{
+            font-size: rem(72);
+        }
+        @include breakpoint-xl{
+            font-size: rem(84);
+        }
+        @include breakpoint-xxl{
+            font-size: rem(100);
+        }
+    }
+}
+
+
+
+// ======= Steps ========
+.process-steps-container{
+    position: relative;
+    max-width: 1390px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.process-center-line{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 50px;
+    margin-left: 0;
+    background: $clr-primary;
+    z-index: -1;
+    height: calc(100% - 450px);
+    display: none;
+    @include breakpoint-md{
+        left: 50%;
+        margin-top: 11rem;
+        display: block;
+    }
+}
+
+.process-content-container{
+    @include breakpoint-md{
+        padding-block:em(64);
+    }
+}
+
+.process-content-article{
+    position: relative;
+    overflow: hidden;
+    @include full-dimensions;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-md{
+        margin-top: 80px;
+    }
+
+    @include breakpoint-md{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-block: 64px;
+    }
+}
+
+.process-left-wrapper,
+.process-right-wrapper{
+    width: 100%;
+
+    @include breakpoint-md{
+        width: min(100%, 44%);
+    }
+}
+
+.process-left-wrapper{
+    float: left;
+}
+.process-right-wrapper{
+    float: right;
+}
+
+.content-left,
+.content-right{
+    position: relative;
+    width: auto;
+   
+    @include breakpoint-md{
+        padding: 25px;
+    }
+}
+
+.progress{
+    .counter-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap:16px;
+        figure{
+            img{
+                width: 48px;
+            }
+        }
+        .counter{
+            font-size: rem(40);
+            font-family: $ff-secondary;
+            @include breakpoint-md{
+                font-size: rem(60);
+            }
+            @include breakpoint-lg{
+                font-size: rem(80);
+            }
+            @include breakpoint-xl{
+                font-size: rem(100);
+            }
+        }
+    }
+}
+
+.steps-number-container{
+    position: absolute;
+    left: 50px;
+    display: none;
+    @include breakpoint-md{
+        left: 51%;
+        display: block;
+    }
+    @include breakpoint-lg{
+        left: 50%;
+    }
+    @include breakpoint-xxl{
+        left: 50%;
+    }
+    .steps-number-box{
+        @include flex-center;
+        @include border-radius(50%);
+        border:1px solid $clr-primary;
+        margin-left: -44px;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.35) 0px 0px 10px rgba(0,0,0,0.35) 0px 0px 15px rgba(0,0,0,0.35);
+        background: $clr-white;
+        width: 60px;
+        height: 60px;
+
+        // @include breakpoint-md{
+        //     width: 90px;
+        //     height: 90px;
+        // }
+        @include breakpoint-lg{
+            width: 80px;
+            height: 80px;
+        }
+        @include breakpoint-xxl{
+            // padding:em(32);
+            width: 96px;
+            height: 96px;
+        }
+        .steps-number{
+            font-size: rem(22);
+            line-height: 1.25;
+            font-weight: 500;
+            font-family: $ff-regular;
+            @include breakpoint-lg{
+                font-size: rem(24);
+            }
+            @include breakpoint-xl{
+                font-size: rem(28);
+            }
+            @include breakpoint-xxl{
+                font-size: rem(32);
+            }
+        }
+    }
+}
+
+#stps-numb-cont-1{
+    height: 100%;
+}

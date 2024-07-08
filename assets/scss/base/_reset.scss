@@ -1,0 +1,132 @@
+/*-----------------------------
+  [Greentek]
+  Project:Greentek
+  Version:1.0
+  Last change: 10/05/2024 06:00 PM [Home]
+  Developed by: Yourhustler
+  Developer: Gaurav Gupta
+  Primary use: 
+--------------------------------------------------*/
+@use '../abstract/colors' as *; 
+@use '../abstract/breakpoints' as *; 
+@use "../abstract/fonts" as *;
+@use "../abstract/mixins" as *;
+@use "../abstract/functions" as *;
+
+*{
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: rem(10);
+}
+
+::-webkit-scrollbar-track {
+  background-color: $clr-white;
+  -webkit-border-radius: 10px;
+  @include border-radius(10px);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  @include border-radius(10px);
+  background: $clr-primary; 
+}
+
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  background-color: $clr-white;
+  font-family:$ff-regular;
+  font-size: rem(18);
+  line-height: 1.5;
+  @include breakpoint-md{
+    font-size: rem(20);
+  }
+}
+
+div,
+ul,  ol, li,
+h1,  h2, h3, h4, h5, h6,
+pre,
+form, fieldset, input, textarea,
+p,
+blockquote,
+th, td {
+  margin: 0;
+  padding: 0;
+}
+  
+a {
+  text-decoration: none;
+  color:$clr-primary;
+}
+
+address{
+  font-style:normal;
+  font-size:100%;
+  color:$clr-primary;
+}
+
+small{
+  display: flex;
+  font-size: rem(16);
+  line-height: 1.75;
+  margin-top: rem(16);
+}
+
+p + p, h1 + p, h2 + p, h3 + p, h4 + p,  h5 + p, h6 + p{
+   margin-top:1rem;
+}
+
+span + span{
+  margin-top: 0.3125rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 100%;
+  font-family: $ff-secondary;
+  color: $clr-primary;
+}
+
+button{
+  border:none;
+  outline:none;
+  font-family: $ff-secondary;
+}
+
+img{
+  display: block;
+}
+
+label{
+  color:$clr-primary;
+  font-size: rem(16);
+  font-family: $ff-regular;
+}
+
+::placeholder{
+  font-size: rem(16) !important;
+  font-family:$ff-secondary !important;
+}
+::selection{
+  color:$clr-white;
+  background-color: $clr-primary;
+}

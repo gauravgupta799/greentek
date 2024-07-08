@@ -1,0 +1,281 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/colors" as *;
+
+// ===== base and responsive font size  ========
+
+// font: style variant weight size/line-height family
+
+// H1 - 80/1.15/500     Mobile: 48/1.09/500/bold
+// H2 - 68/1.24/500     40/1.2/500
+// H3 - 56
+// H4 - 44
+// H5 - 32
+// H6 - 24
+
+// Breakpoint values for min-width operators.
+$breakpoints: (
+  sm: em(576),
+  md: em(768),
+  lg: em(992),
+  xl: em(1200),
+  xxl:em(1600),
+);
+
+
+// Null is mobile, no breakpoint.
+$p-font-sizes: (
+  null:(rem(18), rem(29)), // Font sizes and line height 
+  sm: (rem(18), rem(29)),
+  md: (rem(18), rem(29)),
+  lg: (rem(18), rem(29)),
+  xl: (rem(18), rem(29)),
+  xxl:(rem(20), rem(32)), 
+);
+
+
+$h1-font-sizes: (
+  null: (rem(44), rem(51)),   
+  sm: (rem(48), rem(55)),
+  md: (rem(56), rem(64)),
+  lg: (rem(56), rem(64)),
+  xl: (rem(60), rem(69)),
+  xxl: (rem(72), rem(83)),
+);
+
+$h2-font-sizes:(
+  null:(rem(40), rem(46)), 
+  sm:(rem(40), rem(46)),
+  md:(rem(48), rem(55)),
+  lg:(rem(48), rem(55)),
+  xl:(rem(56), rem(65)),
+  xxl:(rem(64), rem(74)),
+);
+
+$h3-font-sizes: (
+  null:(rem(36), rem(42)), 
+  sm:(rem(36), rem(42)),
+  md:(rem(40), rem(46)),
+  lg:(rem(40), rem(46)),
+  xl:(rem(48), rem(55)),
+  xxl:(rem(56), rem(65)),
+);
+
+$h4-font-sizes: (
+  null:(rem(32), rem(37)), 
+  sm :(rem(32), rem(37)),
+  md :(rem(36), rem(42)),
+  lg :(rem(36), rem(42)),
+  xl :(rem(40), rem(46)),
+  xxl :(rem(48), rem(55)),
+);
+
+$h5-font-sizes: (
+  null:(rem(24), rem(28)), 
+  sm :(rem(24), rem(28)),
+  md :(rem(26), rem(30)),
+  lg :(rem(26), rem(30)),
+  xl :(rem(28), rem(32)),
+  xxl:(rem(32), rem(37)),
+); 
+
+
+$h6-font-sizes: (
+  null: (rem(22), rem(25)),
+  sm : (rem(22), rem(25)),
+  md : (rem(22), rem(25)),
+  lg : (rem(22), rem(25)),
+  xl:  (rem(24), rem(28)),
+  xxl: (rem(24), rem(28)),
+); 
+
+
+
+// $h1-font-sizes: (
+//   null: (rem(44), rem(51)),   
+//   sm: (rem(44), rem(51)),
+//   md: (rem(56), rem(64)),
+//   lg: (rem(56), rem(64)),
+//   xl: (rem(64), rem(74)),
+//   xxl: (rem(80), rem(92)),
+// );
+
+// $h2-font-sizes:(
+//   null:(rem(40), rem(46)), 
+//   sm:(rem(40), rem(46)),
+//   md:(rem(48), rem(55)),
+//   lg:(rem(48), rem(55)),
+//   xl:(rem(56), rem(65)),
+//   xxl:(rem(68), rem(78)),
+// );
+
+// $h3-font-sizes: (
+//   null:(rem(36), rem(42)), 
+//   sm:(rem(36), rem(42)),
+//   md:(rem(40), rem(46)),
+//   lg:(rem(40), rem(46)),
+//   xl:(rem(48), rem(55)),
+//   xxl:(rem(56), rem(64.4)),
+// );
+
+// $h4-font-sizes: (
+//   null:(rem(32), rem(37)), 
+//   sm :(rem(32), rem(37)),
+//   md :(rem(36), rem(42)),
+//   lg :(rem(36), rem(42)),
+//   xl :(rem(40), rem(46)),
+//   xxl :(rem(44), rem(51)),
+// );
+
+// $h5-font-sizes: (
+//   null:(rem(24), rem(28)), 
+//   sm :(rem(24), rem(28)),
+//   md :(rem(26), rem(30)),
+//   lg :(rem(26), rem(30)),
+//   xl :(rem(28), rem(32)),
+//   xxl:(rem(32), rem(37)),
+// ); 
+
+
+// $h6-font-sizes: (
+//   null: (rem(22), rem(25)),
+//   sm : (rem(22), rem(25)),
+//   md : (rem(22), rem(25)),
+//   lg : (rem(22), rem(25)),
+//   xl:  (rem(24), rem(28)),
+//   xxl: (rem(24), rem(28)),
+// ); 
+
+
+
+@mixin font-size($fs-map, $fs-breakpoints:$breakpoints){
+    @each $fs-breakpoint, $fs-font-size in $fs-map{
+        @if $fs-breakpoint == null{
+            @include make-font-size($fs-font-size);
+        }
+        @else{
+            @if map-has-key($fs-breakpoints, $fs-breakpoint){
+                $fs-breakpoint:map-get($fs-breakpoints, $fs-breakpoint);
+            }
+            @media screen and (min-width:$fs-breakpoint){
+                @include make-font-size($fs-font-size);
+            }
+        }
+    }
+}
+
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size){
+    @if type-of($fs-font-size) == "list" {
+        font-size:nth($fs-font-size, 1);
+        @if (length($fs-font-size) > 1){
+            line-height: nth($fs-font-size, 2);
+        }
+    }
+    @else{
+        font-size: $fs-font-size;
+    }
+}
+
+
+// ======== adding both font size and font-family mixins====
+
+h1{
+    @include font-size($h1-font-sizes);
+}
+h2{
+    @include font-size($h2-font-sizes);
+}
+h3{
+    @include font-size($h3-font-sizes);
+}
+h4{
+    @include font-size($h4-font-sizes);
+}
+h5{
+    @include font-size($h5-font-sizes);
+}
+h6{
+    @include font-size($h6-font-sizes);
+}
+
+h1, h2, h3, h4, h5, h6{
+    @include font-heading;
+    font-family: $ff-secondary;
+    font-weight:500;
+}
+
+p, ul, ol, body{
+    @include font-size($p-font-sizes);
+    @include font-body;
+}
+
+
+
+
+
+// $h1-font-sizes: (
+//   null: (rem(40), rem(46)),   
+//   sm: (rem(48), rem(55)),
+//   md: (rem(56), rem(64.4)),
+//   lg: (rem(64), rem(74)),
+//   xl: (rem(72), rem(83)),
+//   xxl: (rem(80), rem(92)),
+// );
+
+// $h2-font-sizes:(
+//   null:(rem(36), rem(42)), 
+//   sm:(rem(40), rem(46)),
+//   md:(rem(48), rem(55)),
+//   lg:(rem(56), rem(64.4)),
+//   xl:(rem(64), rem(74)),
+//   xxl:(rem(72), rem(83)),
+// );
+
+// $h2-font-sizes:(
+//   null:(rem(36), rem(42)), 
+//   sm:(rem(40), rem(46)),
+//   md:(rem(48), rem(55)),
+//   lg:(rem(56), rem(64.4)),
+//   xl:(rem(64), rem(74)),
+//   xxl:(rem(72), rem(83)),
+// );
+
+// $h3-font-sizes: (
+//   null:(rem(32), rem(37)), 
+//   sm:(rem(36), rem(42)),
+//   md:(rem(40), rem(46)),
+//   lg:(rem(48), rem(55)),
+//   xl:(rem(56), rem(64.4)),
+//   xxl:(rem(64), rem(74)),
+// );
+
+// $h4-font-sizes: (
+//   null:(rem(24), rem(28)), 
+//   sm :(rem(28), rem(32)),
+//   md :(rem(32), rem(37)),
+//   lg :(rem(40), rem(46)),
+//   xl :(rem(48), rem(55)),
+//   xxl :(rem(56), rem(64)),
+// );
+
+// $h5-font-sizes: (
+//   null:(rem(22), rem(25)), 
+//   sm :(rem(24), rem(28)),
+//   md :(rem(28), rem(32)),
+//   lg :(rem(32), rem(37)),
+//   xl :(rem(40), rem(46)),
+//   xxl:(rem(48), rem(55)),
+// ); 
+
+
+// $h6-font-sizes: (
+//   null: (rem(20), rem(23)),
+//   sm : (rem(22), rem(25)),
+//   md : (rem(22), rem(25)),
+//   lg : (rem(24), rem(28)),
+//   xl:  (rem(32), rem(37)),
+//   xxl: (rem(40), rem(46)),
+// ); 

@@ -1,0 +1,108 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+.main{
+    overflow: hidden;
+    position: relative;
+}
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    @include breakpoint-lg{
+        display: none;
+    }
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.section-title{
+    text-transform: capitalize;
+}
+
+
+.reveal{
+    background-size: 200% 100%;
+    background-position-x:-100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    user-select: none; 
+    overflow: hidden;
+}
+
+.h-title-reveal{
+    background:linear-gradient(to right, #e0ece8 50%, #033735 50% );
+    background-size: 200% 100%;
+    background-position-x:-100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    user-select: none;
+    // @extend .reveal;
+}
+
+
+.headings-reveal{
+    background:linear-gradient(to right, #033735  50%, #e0ece8 50% );
+    background-size: 200% 100%;
+    background-position-x:-100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    user-select: none;
+}
+
+.headings-reveal-2{
+    background:linear-gradient(to right, #e0ece8  50%, #2e6663 50% );
+    background-size: 200% 100%;
+    background-position-x:-100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    user-select: none;
+    
+}
+
+.headings-reveal-3{
+    background:linear-gradient(to right, #033735 50%, #c5d8d1  50% );
+    background-size: 200% 100%;
+    background-position-x:-100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    user-select: none;
+}
+
+
+// .accordion__title{
+//     position: relative;
+//     background-image:linear-gradient(
+//         to right, $clr-secondary,
+//         $clr-secondary 50%,
+//         $clr-primary 50%
+//     );
+//     background-size: 200% 100%;
+//     background-position:100%;
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     @include transition(background-position, 0.3s, ease-in);
+
+//     &:hover{
+//         background-position: 0;
+//     }
+// }

@@ -1,0 +1,55 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+//?--------- Hero Styles Start ---------
+.hero{
+    &--coming-soon{
+        min-height: 100vh;
+        padding-top: em(96);
+        // padding-bottom: 0;
+        position: relative;
+        @include breakpoint-sm{
+            padding-top: em(128);
+        }
+        @include breakpoint-md{
+            padding-top: em(144);
+            min-height: 100vh;
+        }
+        @include breakpoint-lg{
+            padding-top: em(160);
+        }
+        @include breakpoint-xl{
+            padding-top: em(200);
+        }
+        @media only screen and (min-width:1920px) and (max-width:2160px){
+            paddtop: em(258);
+        }
+    }
+    &__title{
+        text-transform: capitalize;
+        max-width: 20ch;
+    }
+    &__subTitle{
+        max-width: 58ch;
+        text-transform: capitalize;
+    }
+}
+
+.figure{
+    &__barWrapper{
+        @media only screen and (min-width:380px){
+            position: absolute;
+            right: 0;
+            bottom:-32px;
+            display: flex;
+        }
+        @media only screen and (min-width:492px){
+            bottom: 0;
+        }
+    }
+}
+//?--------- Hero Styles End ---------

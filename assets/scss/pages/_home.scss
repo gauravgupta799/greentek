@@ -1,0 +1,555 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.hero-banner{
+    &__wrapper{
+        position: relative;
+    }
+    &__card{
+        @include border-radius(20px);
+        background-color:$clr-white;
+        @include breakpoint-lg{
+            position: absolute;
+            right: 0;
+            top: 58%;
+            width: min(100%, 720px);
+        }
+        @include breakpoint-xl{
+            width: min(100%, 770px);
+        }
+        
+        .banner-card-row{
+            @include flex-center-vertical;
+            gap:rem(16);
+            padding-inline: em(16);
+            @include breakpoint-sm{
+                gap:rem(32);
+                padding-inline: em(32);  
+            }
+            @include breakpoint-md{
+                padding-inline: em(44);
+                gap:rem(64);
+            }
+            @include breakpoint-lg{
+                gap:rem(80);
+            }
+            @include breakpoint-xxl{
+                padding-inline: em(64);
+            }
+
+            .banner-card-left{
+                @include flex-center-vertical;
+                gap:rem(18);
+                figure{
+                    img{
+                        width: 60px;
+                        height: auto;
+                    }
+                }
+                @include breakpoint-sm{
+                    gap:rem(34); 
+                }
+                @include breakpoint-md{
+                    gap:rem(48);
+                    figure{
+                        img{
+                            width: 80px;
+                        }
+                    }
+                }
+                @include breakpoint-lg{
+                    gap:rem(56);
+                    figure{
+                        img{
+                            width: auto;
+                        }
+                    }
+                }
+                @include breakpoint-xxl{
+                    gap:rem(64);
+                }
+            }
+            .banner-card-heading{
+                display: flex;
+                font-size: rem(40);
+                font-family: $ff-secondary;
+                font-weight: 500;
+                line-height: 1.4;
+                color:$clr-primary;
+    
+                @include breakpoint-md{
+                    font-size: rem(48);
+                }
+                @include breakpoint-lg{
+                    font-size: rem(56);
+                }
+                @include breakpoint-xl{
+                    font-size: rem(64);
+                }
+            }
+        }
+    }
+    
+}
+
+// ========= Works Style Start =========
+.works{
+    @include border-radius(34px);
+    background-color: $clr-tertiary;
+    &-card{
+        &__wrapper{
+            padding-inline:em(16);
+            padding-block: em(32);
+            border-right: 1px solid  $border-clr-1;
+            @include breakpoint-md{
+                padding-block: em(48); 
+            }
+        }
+        .work-rect-stacks{
+            .work-rect{
+                max-width: rem(148);
+                height: rem(40);
+                margin-top: rem(8);
+                border: solid 1px $grey;
+                background-color: $clr-secondary;
+                margin-inline:auto;
+            }
+            .bg-none{
+                background: transparent;
+            }
+
+        }
+    }
+}
+
+
+// ========= Facilities Style Start =========
+.facilities{ 
+    background-color: $clr-tertiary;
+    @include border-radius(34px);
+    @media only screen and (min-width:768px){
+        background: transparent;
+    }
+    &__card{
+        @include border-radius(8px);
+        border: solid 1px $border-clr-1;
+        background-color: $clr-white;
+        figure{
+            position: relative;
+        }
+    }
+    &__card-body{
+        padding:em(32) em(16);
+        @include breakpoint-sm{
+            padding:em(64) em(32);
+        }
+        @include breakpoint-xl{
+            padding:em(32);
+        }
+    }
+
+    &--mobile{
+        margin-top: -64px;
+        position: relative;
+    }
+}
+// ========= Facilities Style End =========
+
+
+// ========= Our-Phase Style Start =========
+.our-phase{
+    background: $clr-primary;
+    @include border-radius-tlr(34px, 34px);
+    &__subTitle{
+        color:$clr-white;
+        max-width: min(100% , 60ch);
+    }
+    &__counter-wrapper{
+        display: flex;
+        align-items: baseline;
+        gap:2px;
+        margin-top: 6px;
+        @media only screen and (min-width:420px){
+            gap:8px;
+        }
+        @include breakpoint-sm{
+            margin-top: rem(16);
+            align-items: center;
+        }
+    }
+}
+
+.our-phase-middle{
+    @include flex-center-vertical;
+    gap:1rem;
+    figure{
+        img{
+            width: 64px;
+        }
+    }
+    &__body{
+        gap:12px;
+        padding:1em;
+        padding-right: 0;
+        border-left:1px solid $clr-secondary;
+        @media only screen and (min-width:420px){
+            gap:2rem; 
+            padding:2em 1em;
+        }
+        @include breakpoint-md{
+            padding-block: 2em;
+        }
+        @include breakpoint-lg{
+            gap:3rem;        
+        }
+        @include breakpoint-xl{
+            gap:2rem;
+        }
+        @include breakpoint-xxl{
+            gap:6rem;
+        }
+        .number-wrapper{
+            // display: flex;
+            // align-items: center;
+            // gap: 5px;
+            .counter-number, .suffix{
+                color:$clr-white;
+            }
+            .counter-number{
+                font-size: rem(40);
+                font-weight: 500;
+                line-height: 0.84;
+                font-family:$ff-secondary;
+                // @include breakpoint-sm{
+                //     font-size: rem(50);
+                // }
+                // @include breakpoint-md{
+                //     font-size: rem(40);
+                // }
+                @include breakpoint-lg{
+                    font-size: rem(44);
+                }
+                @include breakpoint-xl{
+                    font-size: rem(52);
+                }
+                @include breakpoint-xxl{
+                    font-size: rem(60);
+                }
+            }
+            .suffix{
+                font-size: rem(24);
+                @include breakpoint-xl{
+                    font-size: rem(28);
+                }
+                @include breakpoint-xxl{
+                    font-size: rem(32);
+                }
+            }
+        }
+    }
+}
+
+.our-phase-img-wrapper{
+    position: relative;
+    .enery-saved-fig{
+        position: absolute;
+        @include flex-center;
+        width: 100%;
+        // margin-top: -220px;
+
+        @include breakpoint-md{
+            margin-top: -160px;
+        }
+        @include breakpoint-xxl{
+            margin-top: -220px;
+        }
+    }
+}
+// ========= Our-Phase Style End =========
+
+
+// ========= Solutions Style Start =========
+.solutions{
+    &__list{
+        li{
+            @include flex-center-vertical;
+            gap: rem(16);
+            padding-block:em(24);
+            &:last-child{
+                border:0;
+            }
+            @include breakpoint-sm{
+                padding-block:em(32);
+                gap:rem(32);
+            }
+            @include breakpoint-md{
+                gap: rem(48);
+            }
+            @include breakpoint-lg{
+                gap: rem(16);
+            }
+            @include breakpoint-xl{
+               gap: rem(32);
+            }
+            @include breakpoint-xxl{
+                gap: rem(80);
+            }
+            figure{
+                flex-shrink: 0;
+                img{
+                    width: 56px;
+                    @include breakpoint-md{
+                        width: 80px;
+                    }
+                    @include breakpoint-lg{
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+// ========= Solutions Style End =========
+
+
+// ========= Cta Style Start =========
+.cta{
+    @include border-radius-tlr(34px, 34px);
+    &--home{
+        margin-top: rem(-32);
+    }
+}
+// ========= Cta Style End =========
+
+
+// ========= Testimonial Style Start =========
+.testimonial{
+    // .testimonial-right{
+    //     position: relative;
+    //     padding:em(48) em(16);
+    //     @include flex-center-horizontal;
+    //     flex-direction: column;
+
+    //     @include breakpoint-md{
+    //         padding:em(64) em(32);
+    //     }
+    //     @include breakpoint-md{
+    //         padding:em(80) em(32);
+    //     }
+    //     @include breakpoint-xl{
+    //         padding-block:0;
+    //     }
+    //     @include breakpoint-xxl{
+    //         padding-inline:em(120);
+    //     }
+    // }
+
+    &__desc{
+        color:$clr-tertiary;
+        font-size: rem(24);
+        line-height: 1.5;
+        font-weight: 300;
+        // text-transform: capitalize;
+        @include breakpoint-md{
+            font-size: rem(28);
+        }
+        @include breakpoint-xxl{
+            font-size: rem(32);
+        }
+        strong{
+            font-family: $ff-secondary;
+        }
+    }
+
+    &__footer{
+        @include flex-center-vertical;
+        gap: rem(16);
+        @include breakpoint-sm{
+            gap: rem(24);
+        }
+        @include breakpoint-md{
+            gap: rem(28);
+        }
+        @include breakpoint-lg{
+            gap: rem(32);
+        }
+        @include breakpoint-xl{
+            gap: rem(36);
+        }
+        figure{
+            @include dimensions(rem(96), rem(96));
+            @include border-radius(50%);
+            background-color: $clr-tertiary;
+            border: solid 1px $grey;
+            flex-shrink: 0;
+            @include breakpoint-sm{
+                @include dimensions(rem(110), rem(110));
+            }
+            @include breakpoint-md{
+                @include dimensions(rem(128), rem(128));
+            }
+            @include breakpoint-xxl{
+                @include dimensions(rem(160), rem(160));
+            }
+            img{
+                @include border-radius(50%);
+            }
+        }
+    }
+
+    &__quote-figure{
+        img{
+            width: 80px;
+            @include breakpoint-md{
+                width: auto;
+            }
+        }
+    }
+}
+
+.testimonial-right-container{
+    display: flex;
+    // @include border-radius(34px);
+    background: $clr-primary;
+    margin-top: -32px;
+    @include breakpoint-sm{
+       margin-top: 0;
+    }
+}
+// ========= Testimonial Style End =========
+
+
+// ========= customer-reviews Style Start =========
+.customer-reviews{
+    background: $clr-primary;
+    @include border-radius-tlr(34px, 34px);
+
+    &__card{
+        @include border-radius(20px);
+        background: $clr-white;
+        padding:em(48) em(16);
+        @include flex-center;
+        flex-direction: column;
+    }
+    &__desc{
+        p{
+            font-size: rem(24);
+            font-weight: normal;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+}
+// ========= customer-reviews Style End =========
+
+
+// ========= Counter Style Start =========
+.counter{
+    &--mobile{
+        background: $clr-primary;
+        @include border-radius-tlr(32px, 32px)
+    }
+    &__wrapper{
+        font-size:rem(80);
+        font-weight: 500;
+        line-height: 1.15;
+        color:$clr-white;
+        font-family: $ff-secondary;
+        display: flex;
+        align-items: center;
+    }
+    &__number{
+        font-size:rem(80);
+        font-weight: 500;
+        line-height: 1.15;
+        color:$clr-white;
+        font-family: $ff-secondary;
+    }
+}
+// ========= Counter Style End =========
+
+
+
+.overlay-btn{
+    font-size: rem(14);
+    font-weight: 300;
+    font-family: $ff-secondary;
+    outline: 0;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    @include breakpoint-sm{
+        font-size: rem(16);
+    }
+}
+
+
+.progress-counter-container{
+    width: 100%;
+    position: relative;
+}
+
+.progress{
+    position: relative;
+    float:left;
+    text-align: center;
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+
+    .counter-wrapper{
+        .counter{
+            font-size: 48px;
+            line-height: 1;
+            font-weight: 900;
+            font-family: $ff-secondary;
+        }
+        p{
+            font-size: 24px;
+            line-height: 1.15;
+        }
+    }
+   
+  }
+
+  /* Wraps the rotating .bar */
+  .barOverflow{ 
+    position: relative;
+    overflow: hidden; /* Comment this line to understand the trick */
+    width: 180px; 
+    height: 90px; /* Half circle (overflow) */
+    margin-bottom: -14px; /* bring the numbers up */
+  }
+  .bar{
+    position: absolute;
+    top: 0; left: 0;
+    width: 180px; 
+    height: 180px; /* full circle! */
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 24px solid $clr-secondary;     /* half gray, */
+    border-bottom-color: $clr-primary;  /* half azure */
+    border-right-color: $clr-primary;
+
+    div{
+        position: relative;
+        top: 110px;
+        width: 40px;
+        height: 40px;
+        border-radius:50%;
+        background-color: $clr-primary;
+        border-width: 10px;
+        border-style: solid;
+        background: white;
+        border-color:  $clr-primary;
+    }
+  }
+  
+  .bar-text{
+    font-weight:600;
+    font-size:20px;
+  }

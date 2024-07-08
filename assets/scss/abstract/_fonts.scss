@@ -1,0 +1,27 @@
+// --------- ObjectSans-Black -------------
+@font-face{
+    font-family:"EasyGrotesk-Regular";
+    src:url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Regular/Easy-Grotesk-Regular.eot");
+    src:url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Regular/Easy-Grotesk-Regular.eot?#iefix") format("embedded-opentype"), 
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Regular/Easy-Grotesk-Regular.woff2") format('woff2'),
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Regular/Easy-Grotesk-Regular.woff") format('woff'),
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Regular/Easy-Grotesk-Regular.ttf") format('truetype'),
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Regular/Easy-Grotesk-Regular.svg#Easy-Grotesk-Regular") format('svg');
+    font-weight:400;
+}
+
+// --------- ObjectSans Regular/Normal -------------
+@font-face{
+    font-family:"EasyGrotesk-Medium";
+    src:url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Medium/Easy-Grotesk-Medium.eot");
+    src:url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Medium/Easy-Grotesk-Medium.eot?#iefix") format("embedded-opentype"), 
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Medium/Easy-Grotesk-Medium.woff2") format('woff2'),
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Medium/Easy-Grotesk-Medium.woff") format('woff'),
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Medium/Easy-Grotesk-Medium.ttf") format('truetype'),
+    url("../assets/fonts/EasyGrotesk/Easy-Grotesk-Medium/Easy-Grotesk-Medium.svg#Easy-Grotesk-Medium") format('svg');
+    font-weight:500;
+}
+
+
+$ff-regular:"EasyGrotesk-Regular", sans-serif;
+$ff-secondary:"EasyGrotesk-Medium", sans-serif;

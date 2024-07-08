@@ -1,0 +1,100 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.companies{
+    background: $clr-primary;
+
+}
+
+.our-mission{
+    &__list{
+        li{
+            display: flex;
+            align-items: center;
+            gap:rem(32);
+            padding-block: em(10);
+            // border-bottom: 1px solid $border-clr-1;
+
+            @include breakpoint-md{
+                gap:rem(48);
+                padding-block: em(18);
+            }
+            @include breakpoint-lg{
+                gap:rem(64);
+                padding-block: em(24);
+            }
+            @include breakpoint-xl{
+                gap:rem(72);
+            }
+            figure{
+                flex-shrink: 0;
+            }
+
+            p{
+                font-size: 16px;
+                line-height: 1.75;
+                font-weight: normal;
+                color:$clr-primary;
+            }
+        } 
+    }
+}
+
+
+
+.marquee{
+    display: flex;
+    align-items: center;
+    gap:8rem;
+    user-select: none;
+    overflow: hidden;
+    position: relative;
+
+    .marguee-group{
+        // white-space: nowrap;
+        padding-block:1em;
+        flex-shrink: 0;
+        animation:scroll 35s linear infinite;
+
+        &__list{
+            display: flex;
+            flex-wrap: nowrap;
+            gap:8rem;
+            flex-shrink: 0;
+            img{
+                object-fit: cover;
+            }
+        }
+    }
+
+}
+
+
+// .marquee::before,
+// .marquee::after{
+//   content: '';
+//   position: absolute;
+//   width: 20%;
+//   height: 100%;
+//   z-index: 1;
+//   top: 0;
+// }
+// .marquee::before{
+//   left: 0;
+//   background-image: linear-gradient(to right, $clr-tertiary 0%,transparent 50%);
+// }
+// .marquee::after{
+//   right: 0;
+//   background-image: linear-gradient(to left, $clr-tertiary 0%,transparent 50%);
+// }
+
+@keyframes scroll {
+    to{
+        transform: translateX(-100%);
+    }
+}
+
