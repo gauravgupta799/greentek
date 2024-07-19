@@ -8,8 +8,7 @@
 .footer{
     &__top{
         border-top:1px solid $clr-white;
-        border-top-left-radius: 34px;
-        border-top-right-radius: 34px;
+        @include border-radius-tlr(20px, 20px);
     }
     &__link-title, &__link{
         color:$clr-white;
@@ -19,7 +18,8 @@
         font-weight: 800;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.8;
+        line-height: 1;
+        display: inline-flex;
     }
     &__link{
         font-size: rem(16);
@@ -30,21 +30,6 @@
         address{
             @extend .footer__link;
         }
-        // span{
-        //     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-        // }
-
-        // &::after {
-        //     content: attr(data-attr);
-        //     position: absolute;
-        //     height: 100%;
-        //     top: 0;
-        //     left: 0px;
-        //     text-transform: capitalize;
-        //     transform: translate3d(0, 100%, 0);
-        //     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-        //     color: $clr-secondary;
-        // }
         &::before {
             content: '';
             position: absolute;
@@ -82,7 +67,7 @@
 .footer-desktop{
    &--contact{
         background: $clr-primary;
-        @include border-radius-tlr(34px, 34px);
+        @include border-radius-tlr(20px, 20px);
    }
 }
 
@@ -155,75 +140,14 @@
         }
         @include breakpoint-lg{
             grid-template-columns: repeat(3,1fr);
-            grid-gap: rem(64);
+            grid-gap: rem(40);
         }
         @include breakpoint-xl{
             grid-template-columns: repeat(4,1fr);
+            grid-gap: rem(64);
         }
         @include breakpoint-xxl{
             grid-gap: rem(80);
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ======= Desktop Footer =======
-// .footer-desktop{
-//     display: none;
-//     @include breakpoint-lg{
-//         display: block;
-//     }
-// }
-
-
-// ======= Mobile Footer =======
-// .footer-mobile{
-//     background: $clr-tertiary;
-//     @include border-radius-tlr(34px , 34px);
-//     position: relative;
-//     margin-top: rem(-32);
-//     @include breakpoint-lg{
-//         display: none;
-//     }
-//     &__content{
-//         p{
-//             font-size: rem(18);
-//             line-height: 1.75;
-//             max-width: 50ch;
-//         }
-//     }
-//     &__list{
-
-//         li{
-//             font-size: rem(20);
-//             font-weight: 300;
-//             line-height: 1.8;
-//         }
-//     }
-
-// }
-
-
-

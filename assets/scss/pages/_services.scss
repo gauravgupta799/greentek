@@ -35,7 +35,7 @@ $full-width:100%;
 
 .benefits{
     background:$clr-tertiary;
-    @include border-radius-tlr(34px, 34px);
+    @include border-radius-tlr(20px, 20px);
     &__grid-container{
         display: grid;
         grid-template-columns: repeat(1,1fr);
@@ -65,7 +65,7 @@ $full-width:100%;
     }
 
     &__card{
-        @include border-radius(34px);
+        @include border-radius(20px);
         background-color: $clr-white;
         @include flex-center;
         flex-direction: column;
@@ -224,17 +224,11 @@ $full-width:100%;
         background: $clr-white;
         width: 60px;
         height: 60px;
-
-        // @include breakpoint-md{
-        //     width: 90px;
-        //     height: 90px;
-        // }
         @include breakpoint-lg{
             width: 80px;
             height: 80px;
         }
         @include breakpoint-xxl{
-            // padding:em(32);
             width: 96px;
             height: 96px;
         }

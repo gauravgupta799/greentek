@@ -196,16 +196,6 @@
             transition:transform 0.35s ease;
             transform-origin: center;
         }
-
-        // &::after{
-        //     @extend .border-after;
-        // }
-
-        // &:focus{
-        //     &::after{
-        //         width: 100%;
-        //     }
-        // }
     }
 
     .options-container{

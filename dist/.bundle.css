@@ -1234,13 +1234,17 @@ p, ul, ol, body {
   border: none;
 }
 
-.brdr-tlr-rdus-34 {
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
+.brdr-tlr-rdus-20 {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .rdus-10 {
   border-radius: 10px;
+}
+
+.rdus-20 {
+  border-radius: 20px;
 }
 
 .lh-0 {
@@ -12315,7 +12319,7 @@ p, ul, ol, body {
 }
 
 .works {
-  border-radius: 34px;
+  border-radius: 20px;
   background-color: #e0ece8;
 }
 .works-card__wrapper {
@@ -12342,7 +12346,7 @@ p, ul, ol, body {
 
 .facilities {
   background-color: #e0ece8;
-  border-radius: 34px;
+  border-radius: 20px;
 }
 @media only screen and (min-width: 768px) {
   .facilities {
@@ -12377,8 +12381,8 @@ p, ul, ol, body {
 
 .our-phase {
   background: #033735;
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .our-phase__subTitle {
   color: #ffffff;
@@ -12554,8 +12558,8 @@ p, ul, ol, body {
 }
 
 .cta {
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .cta--home {
   margin-top: -2rem;
@@ -12563,18 +12567,18 @@ p, ul, ol, body {
 
 .testimonial__desc {
   color: #e0ece8;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   line-height: 1.5;
   font-weight: 300;
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 1200px) {
   .testimonial__desc {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
-@media only screen and (min-width: 100em) {
+@media only screen and (min-width: 1400px) {
   .testimonial__desc {
-    font-size: 2rem;
+    font-size: 1.625rem;
   }
 }
 .testimonial__desc strong {
@@ -12656,8 +12660,8 @@ p, ul, ol, body {
 
 .customer-reviews {
   background: #033735;
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .customer-reviews__card {
   border-radius: 20px;
@@ -12677,8 +12681,8 @@ p, ul, ol, body {
 
 .counter--mobile {
   background: #033735;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .counter__wrapper {
   font-size: 5rem;
@@ -12825,9 +12829,10 @@ p, ul, ol, body {
   position: relative;
 }
 .marquee .marguee-group {
+  white-space: nowrap;
   padding-block: 1em;
   flex-shrink: 0;
-  animation: scroll 35s linear infinite;
+  animation: scroll 45s linear infinite;
 }
 .marquee .marguee-group__list {
   display: flex;
@@ -12841,6 +12846,9 @@ p, ul, ol, body {
 }
 
 @keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
   to {
     transform: translateX(-100%);
   }
@@ -12848,8 +12856,8 @@ p, ul, ol, body {
 .contact-form-container {
   background: #ffffff;
   padding: 5em 1.25em;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 @media only screen and (min-width: 36em) {
   .contact-form-container {
@@ -12949,8 +12957,8 @@ p, ul, ol, body {
 
 .benefits {
   background: #e0ece8;
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .benefits__grid-container {
   display: grid;
@@ -12983,7 +12991,7 @@ p, ul, ol, body {
   left: calc(50% - 32px);
 }
 .benefits__card {
-  border-radius: 34px;
+  border-radius: 20px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -13282,8 +13290,8 @@ p, ul, ol, body {
 
 .footer__top {
   border-top: 1px solid #ffffff;
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .footer__link-title, .footer__link, .footer__link address {
   color: #ffffff;
@@ -13293,7 +13301,8 @@ p, ul, ol, body {
   font-weight: 800;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.8;
+  line-height: 1;
+  display: inline-flex;
 }
 .footer__link, .footer__link address {
   font-size: 1rem;
@@ -13328,8 +13337,8 @@ p, ul, ol, body {
 
 .footer-desktop--contact {
   background: #033735;
-  border-top-left-radius: 34px;
-  border-top-right-radius: 34px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .social-list {
@@ -13413,12 +13422,13 @@ p, ul, ol, body {
 @media only screen and (min-width: 62em) {
   .grid-container--about {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 4rem;
+    grid-gap: 2.5rem;
   }
 }
 @media only screen and (min-width: 75em) {
   .grid-container--about {
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4rem;
   }
 }
 @media only screen and (min-width: 100em) {

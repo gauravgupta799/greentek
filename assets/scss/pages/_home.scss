@@ -98,7 +98,7 @@
 
 // ========= Works Style Start =========
 .works{
-    @include border-radius(34px);
+    @include border-radius(20px);
     background-color: $clr-tertiary;
     &-card{
         &__wrapper{
@@ -130,7 +130,7 @@
 // ========= Facilities Style Start =========
 .facilities{ 
     background-color: $clr-tertiary;
-    @include border-radius(34px);
+    @include border-radius(20px);
     @media only screen and (min-width:768px){
         background: transparent;
     }
@@ -163,7 +163,7 @@
 // ========= Our-Phase Style Start =========
 .our-phase{
     background: $clr-primary;
-    @include border-radius-tlr(34px, 34px);
+    @include border-radius-tlr(20px, 20px);
     &__subTitle{
         color:$clr-white;
         max-width: min(100% , 60ch);
@@ -318,7 +318,7 @@
 
 // ========= Cta Style Start =========
 .cta{
-    @include border-radius-tlr(34px, 34px);
+    @include border-radius-tlr(20px, 20px);
     &--home{
         margin-top: rem(-32);
     }
@@ -328,37 +328,16 @@
 
 // ========= Testimonial Style Start =========
 .testimonial{
-    // .testimonial-right{
-    //     position: relative;
-    //     padding:em(48) em(16);
-    //     @include flex-center-horizontal;
-    //     flex-direction: column;
-
-    //     @include breakpoint-md{
-    //         padding:em(64) em(32);
-    //     }
-    //     @include breakpoint-md{
-    //         padding:em(80) em(32);
-    //     }
-    //     @include breakpoint-xl{
-    //         padding-block:0;
-    //     }
-    //     @include breakpoint-xxl{
-    //         padding-inline:em(120);
-    //     }
-    // }
-
     &__desc{
         color:$clr-tertiary;
-        font-size: rem(24);
+        font-size: rem(22);
         line-height: 1.5;
         font-weight: 300;
-        // text-transform: capitalize;
-        @include breakpoint-md{
-            font-size: rem(28);
+        @media only screen and (min-width:1200px){
+            font-size: rem(24);
         }
-        @include breakpoint-xxl{
-            font-size: rem(32);
+        @media only screen and (min-width:1400px){
+            font-size: rem(26);
         }
         strong{
             font-family: $ff-secondary;
@@ -413,7 +392,6 @@
 
 .testimonial-right-container{
     display: flex;
-    // @include border-radius(34px);
     background: $clr-primary;
     margin-top: -32px;
     @include breakpoint-sm{
@@ -426,7 +404,7 @@
 // ========= customer-reviews Style Start =========
 .customer-reviews{
     background: $clr-primary;
-    @include border-radius-tlr(34px, 34px);
+    @include border-radius-tlr(20px, 20px);
 
     &__card{
         @include border-radius(20px);
@@ -451,7 +429,7 @@
 .counter{
     &--mobile{
         background: $clr-primary;
-        @include border-radius-tlr(32px, 32px)
+        @include border-radius-tlr(20px, 20px)
     }
     &__wrapper{
         font-size:rem(80);

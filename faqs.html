@@ -393,7 +393,7 @@
         <section class="cta-form-section my--6 my--md--6 my--xl--10 my--xxl--14">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-md-10 col-lg-6 col-xxl-5">
+                    <div class="col-md-10 col-lg-6">
                         <h2 class="capitalize  headings-reveal">Ready To Save Half Of Your Fuel?</h2>
                         <div class="overflow-wrapper">
                             <p class="mt-4 revealText">
@@ -401,74 +401,77 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-5 offset-lg-1 offset-xxl-2 mt--3 mt--md--6 mt--lg--0">
+                    <div class="col-lg-5 offset-lg-1 mt--3 mt--md--6 mt--lg--0">
                         <div class="cta-form-container">
                             <form class="cta-form" id="cta-form">
                                 <div class="form__group fade-in-up">
-                                    <label for="fullname" class="form__label">Your Full Name</label>
-                                    <input type="text" class="form__control" name="fullname" id="fullname" placeholder="Enter fullname" onblur="placeholder='Enter fullname'" onfocus="placeholder=''" required>
+                                    <label for="fullname" class="form__label">Name</label>
+                                    <input type="text" class="form__control" name="fullname" id="fullname" placeholder="John Doe"
+                                    onblur="placeholder='John Doe'" onfocus="placeholder=''" required>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mt--2 mt--lg--4">
                                         <div class="form__group fade-in-up">
                                             <label for="email" class="form__label">Email Address</label>
-                                            <input type="email" class="form__control" name="email" id="email" placeholder="example@gmail.com" onblur="placeholder='example@gmail.com'" onfocus="placeholder=''" required>
+                                            <input type="email" class="form__control" name="email" id="email" placeholder="example@gmail.com"
+                                            onblur="placeholder='example@gmail.com'" onfocus="placeholder=''" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mt--2 mt--lg--4">
                                         <div class="form__group fade-in-up">
                                             <label for="phone-number" class="form__label">Phone Number</label>
-                                            <input type="text" class="form__control" name="phone-number" id="phone-number" placeholder="+1 000 000 0000"
+                                            <input type="tel" class="form__control" name="phone-number" id="phone-number" placeholder="+1 000 000 0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                             onblur="placeholder='+1 000 000 0000'" onfocus="placeholder=''" required>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form__group mt--2 mt--lg--4 fade-in-up">
+
+                                <div class="form__group mt--2 mt--lg--4 fade-in-up" id="select-group">
                                     <label for="fullname" class="form__label">
-                                        <span>Our Solution You Are Interested In </span>                   
+                                        <span>The Solution You Are Interested In</span>                   
                                     </label>
                                     <div class="custom-select-container">
                                         <div class="select-box">
-                                            <div class="selected px--0 order-0"> Enrg Blanket</div>
+                                            <div class="selected px--0 order-0">ATTS</div>
                                             <div class="options-container">                                    
                                                 <div class="option">
                                                     <input type="radio" class="radio" id="atts" name="service-category" value="atts">
                                                     <label for="atts">ATTS</label>
                                                 </div>
                                                 <div class="option">
-                                                    <input type="radio" class="radio" id="enrg-blanket" name="service-category" value="engr blanket">
-                                                    <label for="enrg-blanket">Enrg Blanket</label>
+                                                    <input type="radio" class="radio" id="pcm-wrap" name="service-category" value="engr blanket">
+                                                    <label for="pcm-wrap">PCM Wrap</label>
                                                 </div>
                                                 <div class="option">
                                                     <input type="radio" class="radio" id="enrg-panel" name="service-category" value="engr panel">
                                                     <label for="enrg-panel">Enrg Panel</label>
                                                 </div>
-                                            </div>               
+                                            </div>                
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form__group mt--2 mt--lg--4 fade-in-up">
-                                    <label for="message" class="form__label">Tell Us About Your Requirements</label>
-                                    <textarea type="text" class="form__control form__textarea" name="message" id="message" placeholder="Enter your message here" onblur="placeholder='Enter your message here'" onfocus="placeholder=''" required></textarea>
+                                    <label for="message" class="form__label">Tell Us About Your Business</label>
+                                    <textarea type="text" class="form__control form__textarea" name="message" id="message" placeholder="And what you are hoping our products can help you with" onblur='placeholder="And what you are hoping our products can help you with"' onfocus="placeholder=''" required></textarea>
                                 </div>
 
                                 <div class="btn-wrapper mt--4 overflow-wrapper">
                                     <button class="btn btn--secondary fade-in-up">
                                         <span class="mask">
-                                            <div class="link-container">
-                                              <span class="link-title1 title">Submit</span>
-                                              <span class="link-title2 title mt--0">Submit</span>
-                                            </div>
-                                          </span>
-                                           <div class="link-icon">
-                                              <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                                                  <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
-                                              </svg>
-                                              <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                                                  <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
-                                              </svg>
+                                          <div class="link-container">
+                                            <span class="link-title1 title">Submit</span>
+                                            <span class="link-title2 title mt--0">Submit</span>
                                           </div>
+                                        </span>
+                                         <div class="link-icon">
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                                            </svg>
+                                        </div>
                                     </button>
                                 </div>
                             </form>
@@ -483,12 +486,12 @@
 
 
     <!-- Footer Start -->
-    <footer class="footer footer--contact">
-        <div class="footer-desktop footer-desktop--contact">
+    <footer class="footer  footer--contact">
+        <div class="footer-desktop footer-desktop--contact ">
             <div class="footer__top pt--md--6 pt--lg--10 pt--xxl--14 pb--3 pb--xl--6">
                 <div class="page-container">
                     <div class="row">
-                        <div class="col-sm-8 col-lg-5 col-xxl-4 pt--5 pt--md--0">
+                        <div class="col-sm-8 col-lg-5 col-xxl-4 pt--4 pt--md--0">
                             <div class="footer__form-container">
                                 <h2 class="capitalize headings-reveal-2">Subscribe to our newsletter</h2>
                                 <form  class="footer-form mt-4 fade-in-up" id="footer-form">
@@ -511,21 +514,21 @@
                             <div class="footer-social-wrapper d-none d-lg-block">
                                 <ul class="social-list list-none mt--2 mt--md--4 mt--xl--7 overflow-wrapper">
                                     <li class="social-item fade-in-up">
-                                        <a href="https://www.facebook.com/greentek" class="social-link">
+                                        <a href="https://www.facebook.com/greentek" class="social-link" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="22" height="22">
                                                 <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" fill="#01e193"/>
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="social-item fade-in-up">
-                                        <a href="https://www.instagram.com/greentek" class="social-link">
+                                        <a href="https://www.instagram.com/greentek" class="social-link" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="22" height="22">
                                                 <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" fill="#01e193" />
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="social-item fade-in-up">
-                                        <a href="https://www.linkedin.com/greentek" class="social-link">
+                                        <a href="https://www.linkedin.com/greentek" class="social-link" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 18.415 18.414">
                                                 <path data-name="Icon awesome-linkedin-in" d="M4.122 18.415H.3V6.121h3.822zM2.211 4.444a2.221 2.221 0 1 1 2.211-2.232 2.23 2.23 0 0 1-2.211 2.232zm16.2 13.971H14.6V12.43c0-1.426-.029-3.255-1.985-3.255-1.985 0-2.289 1.55-2.289 3.153v6.087H6.513V6.121h3.662V7.8h.053a4.012 4.012 0 0 1 3.612-1.985c3.864 0 4.574 2.544 4.574 5.849v6.753z" transform="translate(0 -.001)" fill="#01e193"/>
                                             </svg>
@@ -540,7 +543,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 offset-lg-1 offset-xxl-2 mt--5 mt--lg--0">
+                        <div class="col-lg-6 offset-lg-1 offset-xxl-2 mt--4 mt--lg--0">
                             <div class="grid-container">
                                 <div class="grid-item">
                                     <p class="footer__link-title mb-3 fade-in">Company</p>
@@ -567,7 +570,7 @@
                                             <a href="./services/atts.html" class="footer__link">ATTS</a>
                                         </li>
                                         <li class="fade-in-up">
-                                            <a href="./services/enrg-blanket.html" class="footer__link"> Enrg Blanket</a>
+                                            <a href="./services/pcm-wrap.html" class="footer__link">PCM Wrap</a>
                                         </li>
                                         <li class="fade-in-up">
                                             <a href="./services/enrg-panel.html" class="footer__link">Enrg Panel</a>
@@ -580,7 +583,7 @@
                                     </a>
                                     <ul class="footer__list list-none">
                                         <li class="fade-in-up">
-                                            <a href="./resources/technology.html" class="footer__link">Technology</a>
+                                            <a href="./technology/bioPCM.html" class="footer__link">Technology</a>
                                         </li>
                                         <li class="fade-in-up">
                                             <a href="./resources/blog.html" class="footer__link ">Blog</a>
@@ -611,25 +614,25 @@
                             </div>
                         </div>  
 
-                        <div class="col-10 col-sm-8  mt--3 mt--md--5 d-lg-none">
+                        <div class="col-10 col-sm-8 mt--3 mt--md--5 d-lg-none">
                             <div class="footer-social-wrapper ">
                                 <ul class="social-list list-none overflow-wrapper">
                                     <li class="social-item fade-in-up">
-                                        <a href="https://www.facebook.com/greentek" class="social-link">
+                                        <a href="https://www.facebook.com/greentek" class="social-link" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="22" height="22">
                                                 <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" fill="#01e193"/>
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="social-item fade-in-up">
-                                        <a href="https://www.instagram.com/greentek" class="social-link">
+                                        <a href="https://www.instagram.com/greentek" class="social-link" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="22" height="22">
                                                 <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" fill="#01e193" />
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="social-item fade-in-up">
-                                        <a href="https://www.linkedin.com/greentek" class="social-link">
+                                        <a href="https://www.linkedin.com/greentek" class="social-link" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 18.415 18.414">
                                                 <path data-name="Icon awesome-linkedin-in" d="M4.122 18.415H.3V6.121h3.822zM2.211 4.444a2.221 2.221 0 1 1 2.211-2.232 2.23 2.23 0 0 1-2.211 2.232zm16.2 13.971H14.6V12.43c0-1.426-.029-3.255-1.985-3.255-1.985 0-2.289 1.55-2.289 3.153v6.087H6.513V6.121h3.662V7.8h.053a4.012 4.012 0 0 1 3.612-1.985c3.864 0 4.574 2.544 4.574 5.849v6.753z" transform="translate(0 -.001)" fill="#01e193"/>
                                             </svg>                                         
